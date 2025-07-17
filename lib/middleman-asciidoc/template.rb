@@ -16,10 +16,6 @@ module Middleman; module AsciiDoc
       end
       @document = ::Asciidoctor.load data, opts
       ctx.current_page.data.document = @document if ctx
-      @output = nil
-    end
-
-    def evaluate scope, locals
       @output ||= @document.convert
     end
 
